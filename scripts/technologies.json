@@ -1,0 +1,8 @@
+{
+ "UI library / framework": ["React","Vue.js","Angular","Svelte","Preact","SolidJS","Alpine.js","Htmx","jQuery","Ember.js"],
+ "Meta-framework": ["Next.js","Next.js App Router","Nuxt.js","Astro","Gatsby","Remix","SvelteKit","Qwik","SolidStart","TanStack Start","Hydrogen"],
+ "Static site generator": ["Docusaurus","Hugo","Jekyll","Eleventy","VitePress","Hexo","GitBook"],
+ "Host / platform": ["Vercel","Netlify","GitHub Pages","Firebase","Render","Fly.io","Heroku","Amazon S3","Kinsta","WP Engine","Pantheon"],
+ "CMS / site builder": ["WordPress","Shopify","Wix","Squarespace","Webflow","Framer Sites","Drupal","Joomla","Ghost","Duda","Contentful","Sanity","Strapi","Storyblok","Magento","WooCommerce","HubSpot CMS Hub","Tilda","Weebly","Blogger"],
+ "Backend framework": ["Laravel","Ruby on Rails","Django"]
+}

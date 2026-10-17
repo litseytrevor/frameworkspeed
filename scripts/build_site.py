@@ -111,8 +111,8 @@ def chart(lines, w=900, h=300):
     leg = " ".join(f'<span style="margin-right:16px"><span style="display:inline-block;width:12px;height:12px;background:{c};border-radius:2px;vertical-align:-1px"></span> {esc(l)}</span>' for l, c, _ in lines)
     return "".join(o) + f'<div style="font-size:14px;margin-top:4px">{leg}</div>'
 
-SIGNUP = """<div class="box signup"><!-- PLACEHOLDER: newsletter form not connected to any provider yet --><h2 style="margin-top:0">Get the monthly leaderboard</h2><p class="sub">One email a month when new CrUX data lands: who moved, who slipped, and why. No spam.</p>
-<form onsubmit="alert('Newsletter coming soon. This is a placeholder.');return false"><input type="email" placeholder="you@example.com" required> <button>Subscribe</button></form><p class="muted" style="font-size:13px;margin-bottom:0">Placeholder: the newsletter is not live yet; nothing is submitted.</p></div>"""
+SIGNUP = """<div class="box signup"><h2 style="margin-top:0">Get the monthly leaderboard</h2><p class="sub">Get the monthly rankings in your inbox. Free, one email a month.</p>
+<form action="https://buttondown.com/api/emails/embed-subscribe/frameworkspeed" method="post" target="popupwindow" onsubmit="window.open('https://buttondown.com/frameworkspeed', 'popupwindow')" class="embeddable-buttondown-form"><label for="bd-email" style="position:absolute;left:-9999px">Email</label><input type="email" name="email" id="bd-email" placeholder="you@example.com" required> <input type="hidden" value="1" name="embed"><button type="submit">Subscribe</button></form></div>"""
 
 def main():
     raw, cat_of, series = load()

@@ -15,5 +15,7 @@ Live: https://litseytrevor.github.io/frameworkspeed/ (GitHub Pages, source = Git
 fetches data, commits `data/` if changed, builds `site/`, deploys via actions/deploy-pages.
 
 ## Placeholders (not live yet)
-- Newsletter signup form (no provider connected; nothing is submitted).
 - Sponsor contact `sponsor@example.com` on sponsor.html.
+
+## Newsletter
+Signup forms post to Buttondown (`frameworkspeed`): https://buttondown.com/frameworkspeed

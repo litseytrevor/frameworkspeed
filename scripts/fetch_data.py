@@ -31,7 +31,13 @@ def main():
         rows += get("cwv", {"technology": ",".join(batch), "geo": "ALL", "rank": "ALL", "start": start})
     out = {"source": API + "/cwv", "fetched_at": datetime.datetime.now(datetime.timezone.utc).isoformat(),
            "api_dates_latest": dates[0], "start": start, "categories": cats, "rows": rows}
-    (ROOT / "data/raw.json").write_text(json.dumps(out))
+    old = ROOT / "data/raw.json"
+    if old.exists():
+        prev = json.loads(old.read_text())
+        if prev.get("rows") == out["rows"] and prev.get("categories") == out["categories"]:
+            out["fetched_at"] = prev["fetched_at"]  # unchanged data: keep file stable (no empty commits)
+            print("data unchanged since", prev["fetched_at"])
+    old.write_text(json.dumps(out))
     print(f"wrote {len(rows)} rows for {len({r['technology'] for r in rows})}/{len(techs)} technologies")
     missing = set(techs) - {r["technology"] for r in rows}
     if missing: print("no data:", sorted(missing))

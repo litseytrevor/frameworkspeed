@@ -37,7 +37,8 @@ jobs:
             echo "No data changes"
           else
             git commit -m "Refresh data ($(date -u +%Y-%m-%d))"
-            git push
+            git pull --rebase origin main
+            git push origin HEAD:main
           fi
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
